@@ -7,7 +7,6 @@ int_array::int_array(int initial_size, int re_alloc_size) :
 
 
 
-
 void int_array::push_back(int value) {
     if (head_ == size_) {
         int *ptr = new int[size_ + re_alloc_size_];

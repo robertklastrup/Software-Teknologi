@@ -9,15 +9,12 @@ template <class T>
 T max (vector<T>& list){
     if (list.empty()){
         throw runtime_error ("Vectoren er tom");
-
     }
-
     T maxValue = list[0];
     for (int i = 1; i < list.size(); i++){
         if (list[i] > maxValue){
             maxValue = list[i];
         }
-
     }
     return maxValue;
 };

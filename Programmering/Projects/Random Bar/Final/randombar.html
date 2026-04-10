@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Bar Generator</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --surface: #161616;
+    --card: #1e1e1e;
+    --accent: #f5c842;
+    --accent2: #e8533a;
+    --text: #f0ece4;
+    --muted: #888;
+    --border: #2e2e2e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.5;
+  }
+
+  .screen {
+    display: none;
+    width: 100%;
+    max-width: 560px;
+    padding: 2rem;
+    animation: fadeUp 0.4s ease forwards;
+  }
+
+  .screen.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .logo-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .logo-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%,100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.6; }
+  }
+
+  .logo-text {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 10vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  h1 span { color: var(--accent); }
+
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 7vw, 3.5rem);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  .card-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    user-select: none;
+  }
+
+  .card:hover {
+    background: #252525;
+    border-color: var(--accent);
+    transform: translateX(4px);
+  }
+
+  .card:active { transform: translateX(2px) scale(0.99); }
+
+  .card-label {
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .card-arrow {
+    font-size: 1.2rem;
+    color: var(--muted);
+    transition: color 0.2s, transform 0.2s;
+  }
+
+  .card:hover .card-arrow {
+    color: var(--accent);
+    transform: translateX(4px);
+  }
+
+  .card-emoji {
+    font-size: 1.4rem;
+    margin-right: 0.8rem;
+  }
+
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    margin-bottom: 2.5rem;
+    border: none;
+    background: none;
+    font-family: 'DM Sans', sans-serif;
+    transition: color 0.2s;
+    padding: 0;
+  }
+
+  .back-btn:hover { color: var(--text); }
+
+  .result-wrapper {
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .result-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+  }
+
+  .result-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 14vw, 7rem);
+    line-height: 1;
+    color: var(--accent);
+    text-shadow: 0 0 60px rgba(245, 200, 66, 0.25);
+    margin-bottom: 0.5rem;
+    animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  @keyframes popIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+  }
+
+  .result-category {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .reroll-btn {
+    background: var(--accent);
+    color: #0d0d0d;
+    border: none;
+    border-radius: 10px;
+    padding: 0.85rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: transform 0.15s, box-shadow 0.2s;
+    margin-bottom: 1rem;
+    display: block;
+    width: 100%;
+  }
+
+  .reroll-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(245, 200, 66, 0.3);
+  }
+
+  .reroll-btn:active { transform: translateY(0); }
+
+  .wip-wrapper {
+    text-align: center;
+    padding: 3rem 0;
+  }
+
+  .wip-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--muted);
+  }
+
+  .loading-gif {
+    font-size: 3rem;
+    display: block;
+    margin: 1.5rem auto;
+    animation: spin 1.5s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  .wip-sub {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="screen active" id="screen-home">
+  <div class="logo-bar">
+    <div class="logo-dot"></div>
+    <span class="logo-text">Bar Generator · DK</span>
+  </div>
+  <h1>Velkommen til<br><span>Random Bar</span><br>Generator!</h1>
+  <p class="subtitle">Hvilken by er du i?</p>
+  <div class="card-grid">
+    <div class="card" onclick="goto('screen-aarhus')">
+      <div style="display:flex;align-items:center">
+        <span class="card-emoji">🏙️</span>
+        <span class="card-label">Århus</span>
+      </div>
+      <span class="card-arrow">→</span>
+    </div>
+    <div class="card" onclick="goto('screen-esbjerg')">
+      <div style="display:flex;align-items:center">
+        <span class="card-emoji">⚓</span>
+        <span class="card-label">Esbjerg</span>
+      </div>
+      <span class="card-arrow">→</span>
+    </div>
+    <div class="card" onclick="goto('screen-kbh')">
+      <div style="display:flex;align-items:center">
+        <span class="card-emoji">👑</span>
+        <span class="card-label">København</span>
+      </div>
+      <span class="card-arrow">→</span>
+    </div>
+  </div>
+</div>
+
+<div class="screen" id="screen-aarhus">
+  <button class="back-btn" onclick="goto('screen-home')">← Tilbage</button>
+  <h2>Hvad er du til<br>i dag?</h2>
+  <p class="subtitle">Vælg en kategori og få dit næste stop</p>
+  <div class="card-grid">
+    <div class="card" onclick="pickBar('fizz')">
+      <div style="display:flex;align-items:center">
+        <span class="card-emoji">🍸</span>
+        <span class="card-label">Fizz</span>
+      </div>
+      <span class="card-arrow">→</span>
+    </div>
+    <div class="card" onclick="pickBar('klub')">
+      <div style="display:flex;align-items:center">
+        <span class="card-emoji">🎶</span>
+        <span class="card-label">Klub</span>
+      </div>
+      <span class="card-arrow">→</span>
+    </div>
+    <div class="card" onclick="pickBar('fredagsbar')">
+      <div style="display:flex;align-items:center">
+        <span class="card-emoji">🍺</span>
+        <span class="card-label">Fredagsbar</span>
+      </div>
+      <span class="card-arrow">→</span>
+    </div>
+    <div class="card" onclick="pickBar('billigt')">
+      <div style="display:flex;align-items:center">
+        <span class="card-emoji">💸</span>
+        <span class="card-label">Brunt &amp; Billigt</span>
+      </div>
+      <span class="card-arrow">→</span>
+    </div>
+  </div>
+</div>
+
+<div class="screen" id="screen-result">
+  <button class="back-btn" onclick="goto('screen-aarhus')">← Tilbage</button>
+  <div class="result-wrapper">
+    <p class="result-label">Dit næste stop er</p>
+    <div class="result-name" id="result-name">—</div>
+    <p class="result-category" id="result-category"></p>
+    <button class="reroll-btn" onclick="reroll()">🎲 Prøv igen</button>
+    <button class="back-btn" style="display:inline-flex;margin:0 auto;" onclick="goto('screen-aarhus')">Vælg anden kategori</button>
+  </div>
+</div>
+
+<div class="screen" id="screen-kbh">
+  <button class="back-btn" onclick="goto('screen-home')">← Tilbage</button>
+  <div class="wip-wrapper">
+    <div class="wip-title">Working Progress</div>
+    <span class="loading-gif">⏳</span>
+    <p class="wip-sub">København er på vej — kom tilbage snart!</p>
+  </div>
+</div>
+
+<div class="screen" id="screen-esbjerg">
+  <button class="back-btn" onclick="goto('screen-home')">← Tilbage</button>
+  <div class="wip-wrapper">
+    <div class="wip-title">Working Progress</div>
+    <span class="loading-gif">⏳</span>
+    <p class="wip-sub">Esbjerg er på vej — kom tilbage snart!</p>
+  </div>
+</div>
+
+<script>
+  const bars = {
+    fizz: {
+      label: 'Fizz · Århus',
+      list: ['PV','Drudenfuss','Oops','Enigma','LeCoq','Gedulgt','ÅBEN','Tanken','Manza Vinbar','Broløs']
+    },
+    klub: {
+      label: 'Klub · Århus',
+      list: ['Bar 3','Hedis','Den Sidste','BarSmil','Shen Mao','LouLou','ST3']
+    },
+    fredagsbar: {
+      label: 'Fredagsbar · Århus',
+      list: ['Katrines Kælder','Umbi','Approksimerbar','DMJX','Alkymia','Kalkulerbar','Esperanto','Klubben','Kurts Strandbar']
+    },
+    billigt: {
+      label: 'Brunt & Billigt · Århus',
+      list: ['Vinstuen','Ris Ras Filliongongong','Harmonien','Bodegaen','Hjorten','Æblet og Gåsen']
+    }
+  };
+
+  let currentCategory = null;
+
+  function goto(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function pickBar(category) {
+    currentCategory = category;
+    showResult();
+  }
+
+  function showResult() {
+    const cat = bars[currentCategory];
+    const pick = cat.list[Math.floor(Math.random() * cat.list.length)];
+    document.getElementById('result-name').textContent = pick;
+    document.getElementById('result-category').textContent = cat.label;
+    goto('screen-result');
+  }
+
+  function reroll() {
+    const el = document.getElementById('result-name');
+    el.style.animation = 'none';
+    void el.offsetWidth;
+    el.style.animation = '';
+    showResult();
+  }
+</script>
+</body>
+</html>
