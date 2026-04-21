@@ -1,24 +1,21 @@
 #include <iostream>
 #include <vector>
+#include "lock.h"
 using namespace std;
 
-
-class Lock{
-    public:
-        string pin;
-        bool nopin;
-        bool isValid;
-        bool locked;
-    Lock(){
+ 
+    Lock :: Lock(){
         pin = "0";
         locked = true;
         nopin = false;
         isValid = false;
     }
-    void lockSystem(){
+
+    void Lock :: lockSystem(){
         locked = true;
     }
-    void unlockSystem (){
+
+    void Lock :: unlockSystem (){
         string p;
         
         do{
@@ -36,7 +33,7 @@ class Lock{
         } while (locked == true);
     }
 
-    void checkStatus(){
+    void Lock :: checkStatus(){
         if(locked == false){
             cout << "Batteriet er ikke låst" << endl;
         }
@@ -44,7 +41,8 @@ class Lock{
             cout << "Batteriet er låst" << endl;
         }
     }
-    void pinIsValid(){
+
+    void Lock :: pinIsValid(){
         if (pin.length() != 4) {
             cout << "Pinkoden skal være 4 cifre!" << endl;
             isValid = false;
@@ -63,7 +61,8 @@ class Lock{
         }
         return;
     }
-    void createPin(){
+
+    void Lock :: createPin(){
         do{
             cout << "Opret en pinkode" << endl;
             cin >> pin;
@@ -71,5 +70,7 @@ class Lock{
         } while (!isValid);
     }
 
-    
-};
+/*
+Max 3 forsøg med login til bruger eller pinkode 
+De får tilsendt et bekræftelse på mail
+*/
