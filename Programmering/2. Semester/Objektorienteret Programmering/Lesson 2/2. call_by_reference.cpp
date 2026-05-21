@@ -1,26 +1,15 @@
 #include <iostream>
 using namespace std;
 
-
+// call by pointer: ændrer braendstof direkte via adresse:
 void tank (int* braendstof, int liter){
     *braendstof = *braendstof + liter;
 }
 
 int main (){
-    //Første forsøg:
-    /*
-    int braendstof = 20;
-    int* braendstof_ptr{&braendstof};
-    cout << *braendstof_ptr << endl;
-    tank(braendstof_ptr, 50);
-    cout << *braendstof_ptr << endl;
-    */
-
     int braendstof = 20;
     cout << braendstof << endl;
+    // sender adressen på braendstof til tank():
     tank(&braendstof, 50);
     cout << braendstof << endl;
-
-
 }
-

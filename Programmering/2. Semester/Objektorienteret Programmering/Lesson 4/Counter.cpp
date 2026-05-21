@@ -1,13 +1,18 @@
 #include <iostream>
 #include "Counter.h"
 using namespace std;
-    
-    Counter :: Counter(){
-        count_ = count_ + 1;
-    }
-    int Counter :: get_count(){
-        return (count_);
-    }
-    void Counter :: reset_count(){
-        count_ = 0;
-    }
+
+// konstruktør: tæller op ved oprettelse:
+Counter :: Counter(){
+    count_ = count_ + 1;
+}
+
+// returnerer nuværende tællerværdi:
+int Counter :: get_count(){
+    return (count_);
+}
+
+// nulstiller tæller til 0:
+void Counter :: reset_count(){
+    count_ = 0;
+}

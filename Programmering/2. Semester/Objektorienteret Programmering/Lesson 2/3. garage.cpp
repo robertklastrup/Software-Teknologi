@@ -1,27 +1,35 @@
 #include <iostream>
 using namespace std;
 
+// Car-klasse med model, km og brændstof:
 class Car{
-    private: 
+    private:
         string model;
         int km;
         int braendstof;
-    public: 
+    public:
+
+    // sætter model, km og brændstof:
     Car(string m, int k, int b){
         model = m;
         km = k;
         braendstof = b;
     }
+
+    // printer bil-info:
     void print(){
         cout << "Model: " << model << endl;
         cout << "Kilometer: " << km << endl;
         cout << "Braendstof: " << braendstof << endl;
     }
+
+    // trækker distance fra km og bruger brændstof:
     void drive (int distance){
         km = km - distance;
         braendstof = braendstof - (distance/10);
     }
 
+    // tilføjer liter brændstof:
     void tank_op (int liter){
         braendstof = braendstof + liter;
     }
