@@ -1,0 +1,17 @@
+Answer these questions
+a*) What is the average heart rate of the 'Rasmus Skovby' who goes to sleep at 21?
+Skriver:
+[p.average_heart_rate() for p in patients if p.name == "Rasmus Skovby" and p.sleep_time.hour == 21]
+i debug console da vi skal finde Rasmus Skovby - og der er 3 af dem, og vi skal finde ham der går i seng kl 21
+Hans average heart rate = 77.693181
+
+b*) When does 'Lisbeth Tørmark' with and avg heartrate of 77.20 go to sleep?
+Skriver:
+[p.sleep_time for p in patients if p.name == "Lisbeth Tørmark" and round(p.average_heart_rate(), 2) == 77.20]
+I debug console.
+Hun går i seng kl 21
+
+c*) How many 'Anne Ugestrup' are present in the dataset?
+Skriver bare:
+[p.name for p in patients if p.name == "Anne Ugestrup"]
+I debug console, der er 5.
