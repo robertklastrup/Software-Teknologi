@@ -7,7 +7,7 @@ template <class T>
 T max (vector<T>& list){
     // kaster fejl hvis vectoren er tom:
     if (list.empty()){
-        throw runtime_error ("Vectoren er tom");
+        throw std::out_of_range ("Vectoren er tom");
     }
     T maxValue = list[0];
     // løber vector igennem og opdaterer maxValue hvis større element findes:
