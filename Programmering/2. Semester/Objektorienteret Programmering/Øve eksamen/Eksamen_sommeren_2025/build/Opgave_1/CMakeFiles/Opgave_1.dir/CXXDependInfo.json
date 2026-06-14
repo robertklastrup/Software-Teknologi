@@ -1,0 +1,45 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "C:/Eksamen2025/build/Opgave_1",
+	"dir-cur-src" : "C:/Eksamen2025/Opgave_1",
+	"dir-top-bld" : "C:/Eksamen2025/build",
+	"dir-top-src" : "C:/Eksamen2025",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"C:\\Eksamen2025\\Opgave_1\\include"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "C:/Eksamen2025/build/Opgave_1/CMakeFiles/Opgave_1.dir",
+	"sources" : 
+	{
+		"Opgave_1/CMakeFiles/Opgave_1.dir/src/opgave_1.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Eksamen2025/Opgave_1/src/opgave_1.cpp"
+		},
+		"Opgave_1/CMakeFiles/Opgave_1.dir/src/point.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Eksamen2025/Opgave_1/src/point.cpp"
+		},
+		"Opgave_1/CMakeFiles/Opgave_1.dir/src/square.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Eksamen2025/Opgave_1/src/square.cpp"
+		},
+		"Opgave_1/CMakeFiles/Opgave_1.dir/src/tests.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Eksamen2025/Opgave_1/src/tests.cpp"
+		}
+	}
+}

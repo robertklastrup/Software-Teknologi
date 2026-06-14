@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Eksamen2025/build/cmake_install.cmake",
+		"C:/Eksamen2025/build/Opgave_1/cmake_install.cmake",
+		"C:/Eksamen2025/build/Opgave_2/cmake_install.cmake",
+		"C:/Eksamen2025/build/Opgave_3/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

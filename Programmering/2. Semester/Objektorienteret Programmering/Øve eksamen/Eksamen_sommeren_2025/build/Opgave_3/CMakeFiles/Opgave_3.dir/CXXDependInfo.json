@@ -1,0 +1,55 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "C:/Eksamen2025/build/Opgave_3",
+	"dir-cur-src" : "C:/Eksamen2025/Opgave_3",
+	"dir-top-bld" : "C:/Eksamen2025/build",
+	"dir-top-src" : "C:/Eksamen2025",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"C:\\Eksamen2025\\Opgave_3\\include"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "C:/Eksamen2025/build/Opgave_3/CMakeFiles/Opgave_3.dir",
+	"sources" : 
+	{
+		"Opgave_3/CMakeFiles/Opgave_3.dir/src/csv_unique_sorted_collector.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Eksamen2025/Opgave_3/src/csv_unique_sorted_collector.cpp"
+		},
+		"Opgave_3/CMakeFiles/Opgave_3.dir/src/data_collector.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Eksamen2025/Opgave_3/src/data_collector.cpp"
+		},
+		"Opgave_3/CMakeFiles/Opgave_3.dir/src/json_collector.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Eksamen2025/Opgave_3/src/json_collector.cpp"
+		},
+		"Opgave_3/CMakeFiles/Opgave_3.dir/src/opgave_3.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Eksamen2025/Opgave_3/src/opgave_3.cpp"
+		},
+		"Opgave_3/CMakeFiles/Opgave_3.dir/src/tests.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Eksamen2025/Opgave_3/src/tests.cpp"
+		},
+		"Opgave_3/CMakeFiles/Opgave_3.dir/src/unique_sorted_collector.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Eksamen2025/Opgave_3/src/unique_sorted_collector.cpp"
+		}
+	}
+}

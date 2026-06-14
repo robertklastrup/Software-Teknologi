@@ -1,0 +1,11 @@
+C:/Eksamen2025/build/CMakeFiles/edit_cache.dir
+C:/Eksamen2025/build/CMakeFiles/rebuild_cache.dir
+C:/Eksamen2025/build/Opgave_1/CMakeFiles/Opgave_1.dir
+C:/Eksamen2025/build/Opgave_1/CMakeFiles/edit_cache.dir
+C:/Eksamen2025/build/Opgave_1/CMakeFiles/rebuild_cache.dir
+C:/Eksamen2025/build/Opgave_2/CMakeFiles/Opgave_2.dir
+C:/Eksamen2025/build/Opgave_2/CMakeFiles/edit_cache.dir
+C:/Eksamen2025/build/Opgave_2/CMakeFiles/rebuild_cache.dir
+C:/Eksamen2025/build/Opgave_3/CMakeFiles/Opgave_3.dir
+C:/Eksamen2025/build/Opgave_3/CMakeFiles/edit_cache.dir
+C:/Eksamen2025/build/Opgave_3/CMakeFiles/rebuild_cache.dir

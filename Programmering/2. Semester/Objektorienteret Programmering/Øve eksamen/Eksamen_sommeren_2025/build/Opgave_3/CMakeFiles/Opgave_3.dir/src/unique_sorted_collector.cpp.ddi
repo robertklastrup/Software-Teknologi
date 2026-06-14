@@ -1,0 +1,11 @@
+{
+"rules": [
+{
+"primary-output": "Opgave_3/CMakeFiles/Opgave_3.dir/src/unique_sorted_collector.cpp.o",
+"requires": [
+]
+}
+],
+"version": 0,
+"revision": 0
+}

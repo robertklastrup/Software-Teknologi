@@ -1,0 +1,9 @@
+ninja_dyndep_version = 1.0
+build Opgave_1/CMakeFiles/Opgave_1.dir/src/opgave_1.cpp.obj: dyndep
+
+build Opgave_1/CMakeFiles/Opgave_1.dir/src/point.cpp.obj: dyndep
+
+build Opgave_1/CMakeFiles/Opgave_1.dir/src/square.cpp.obj: dyndep
+
+build Opgave_1/CMakeFiles/Opgave_1.dir/src/tests.cpp.obj: dyndep
+

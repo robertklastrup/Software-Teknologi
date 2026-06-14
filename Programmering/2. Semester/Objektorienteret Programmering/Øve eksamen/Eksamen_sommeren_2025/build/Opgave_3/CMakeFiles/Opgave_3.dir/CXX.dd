@@ -1,0 +1,13 @@
+ninja_dyndep_version = 1.0
+build Opgave_3/CMakeFiles/Opgave_3.dir/src/opgave_3.cpp.obj: dyndep
+
+build Opgave_3/CMakeFiles/Opgave_3.dir/src/tests.cpp.obj: dyndep
+
+build Opgave_3/CMakeFiles/Opgave_3.dir/src/data_collector.cpp.obj: dyndep
+
+build Opgave_3/CMakeFiles/Opgave_3.dir/src/unique_sorted_collector.cpp.obj: dyndep
+
+build Opgave_3/CMakeFiles/Opgave_3.dir/src/csv_unique_sorted_collector.cpp.obj: dyndep
+
+build Opgave_3/CMakeFiles/Opgave_3.dir/src/json_collector.cpp.obj: dyndep
+
