@@ -15,6 +15,19 @@ int main()
 	}
 
 	
+	try{
+        matrix_1 m1 (3,4);
+        m1.get(4,1);
+    }catch (std::out_of_range& e){
+        std::cout << "Exception caught"  << e.what()<< std::endl;
+    }
+    
+    try{
+        matrix_1 m1 (3,4);
+        m1.get(2,5);
+    } catch (std::out_of_range& e){
+        std::cout << "Exception caught" << e.what() << std::endl;
+    }
 	//Opgave 1 c-3)
 	Fraction f3 (3, 2);
 	Fraction f4 (9, 6);

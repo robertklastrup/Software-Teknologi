@@ -51,5 +51,5 @@ T time_series_template<T>::mean_value() const
 	{
 		sum =sum+ series_[i].second;
 	}
-	return sum / static_cast<T>(series_.size());
+	return sum / series_.size();
 }
