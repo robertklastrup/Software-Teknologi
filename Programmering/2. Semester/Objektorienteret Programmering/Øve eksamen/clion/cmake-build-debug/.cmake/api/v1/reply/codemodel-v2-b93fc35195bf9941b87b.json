@@ -1,0 +1,176 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "Exercise_1",
+					"jsonFile" : "directory-Exercise_1-Debug-32e32d52296895ddc558.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Exercise_1",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "Exercise_2",
+					"jsonFile" : "directory-Exercise_2-Debug-e18359084e670a20239f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Exercise_2",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "Exercise_3",
+					"jsonFile" : "directory-Exercise_3-Debug-e15def25014687f50382.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Exercise_3",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "Exercise_4",
+					"jsonFile" : "directory-Exercise_4-Debug-fad80d20d087ce617766.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Exercise_4",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "Exercise_5",
+					"jsonFile" : "directory-Exercise_5-Debug-3fa10eaae7c1aff7a4c6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Exercise_5",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"name" : "clion",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "Exercise_1::@9e0034b023bec5281faa",
+					"jsonFile" : "target-Exercise_1-Debug-44a04d606ad368fe4383.json",
+					"name" : "Exercise_1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Exercise_2::@6a1e261727db2b4016f5",
+					"jsonFile" : "target-Exercise_2-Debug-d3b4e8a86b22ff811e6d.json",
+					"name" : "Exercise_2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Exercise_3::@517faf68b5764e004079",
+					"jsonFile" : "target-Exercise_3-Debug-2c09b071485704f71f28.json",
+					"name" : "Exercise_3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Exercise_4::@814a9ffcae0968e15894",
+					"jsonFile" : "target-Exercise_4-Debug-3d286064398823101377.json",
+					"name" : "Exercise_4",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "Exercise_5::@2ff446d9004e8d8ec9fe",
+					"jsonFile" : "target-Exercise_5-Debug-84734ebe50dba9ca4eca.json",
+					"name" : "Exercise_5",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug",
+		"source" : "C:/courses/c++/2semesterF2024/Lesson05/solution/clion"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

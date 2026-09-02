@@ -1,0 +1,16 @@
+# Python virtual environments
+.venv/
+.venv-win/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Byte-compiled / optimized files
+*.pyo
+*.pyd
+
+# Build artifacts
+*.egg-info/
+dist/
+build/

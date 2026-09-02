@@ -1,0 +1,17 @@
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/Exercise_1/CMakeFiles/Exercise_1.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/Exercise_1/CMakeFiles/edit_cache.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/Exercise_1/CMakeFiles/rebuild_cache.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/Exercise_2/CMakeFiles/Exercise_2.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/Exercise_2/CMakeFiles/edit_cache.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/Exercise_2/CMakeFiles/rebuild_cache.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/Exercise_3/CMakeFiles/Exercise_3.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/Exercise_3/CMakeFiles/edit_cache.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/Exercise_3/CMakeFiles/rebuild_cache.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/Exercise_4/CMakeFiles/Exercise_4.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/Exercise_4/CMakeFiles/edit_cache.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/Exercise_4/CMakeFiles/rebuild_cache.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/Exercise_5/CMakeFiles/Exercise_5.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/Exercise_5/CMakeFiles/edit_cache.dir
+C:/courses/c++/2semesterF2024/Lesson05/solution/clion/cmake-build-debug/Exercise_5/CMakeFiles/rebuild_cache.dir

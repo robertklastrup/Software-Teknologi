@@ -58,12 +58,12 @@ void test_series_template_vector()
 	time_series_template<vector> series_;
 	for (size_t i = 0; i < 100; i++)
 	{
-		const auto value = random_value();
+		vector value = {random_value(),random_value()};
 		series_.add(value);
 
 		delay();
 	}
 	
 	std::cout << "Mean duration:" << series_.mean_duration() << "\n";
-	std::cout << "Mean value:" << series.mean_value() << "\n";
+	std::cout << "Mean value:" << series_.mean_value() << "\n";
 }
