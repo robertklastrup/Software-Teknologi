@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(PYTHONHTTPSVERIFY=0 c:/Users/rober/Software-Teknologi/Programmering/.venv/bin/python.exe -m pip install pyzmq --only-binary :all: --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org)",
+      "Bash(c:/Users/rober/Software-Teknologi/Programmering/.venv/bin/python.exe -c \"import sys, platform; print\\(sys.version\\); print\\(platform.machine\\(\\)\\); print\\(sys.platform\\)\")"
+    ]
+  }
+}

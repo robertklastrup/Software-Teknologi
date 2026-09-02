@@ -26,22 +26,22 @@ class Patient:
         total = sum(r.bpm for r in self.readings)
         return total / (len(self.readings) if self.readings else 1)
 
-    def get_max_heart_rate(self):
-        return min(r.bpm for r in self.readings)
+    def get_min_heart_rate(self): 
+        return min(r.bpm for r in self.readings) #Byttede lige rundt på min og max i funktionnavn.
 
-    def get_min_heart_rate(self):
-        return max(r.bpm for r in self.readings)
+    def get_max_heart_rate(self):
+        return max(r.bpm for r in self.readings) #Byttede lige rundt på min og max i funktionnavn.
 
     def abnormal_readings(self):
         abnormal = []
         for reading in self.readings:
             sleeping = self.is_sleeping(reading.timestamp)
             if sleeping:
-                if reading.bpm < 50 and reading.bpm > 90:
-                    abnormal.append(reading)
+                if reading.bpm < 50 or reading.bpm > 90:
+                    abnormal.append(reading) #Lavede and om til OR
             else:
-                if reading.bpm < 60 and reading.bpm > 100:
-                    abnormal.append(reading)
+                if reading.bpm < 60 or reading.bpm > 100:
+                    abnormal.append(reading) #Lavede and om til OR
         return abnormal
 
     def report(self):
@@ -80,5 +80,7 @@ def load_patients_from_json():
 
 if __name__ == "__main__":
     patients = load_patients_from_json()
-    for patient in patients[:10]:  
-        patient.report()
+    for patient in patients:  
+        if patient.abnormal_readings():
+            patient.report()
+            #Sørgede for den printede mere end 10 patienter, og kun patienter med en unormal BPM
