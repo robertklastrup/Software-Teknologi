@@ -49,5 +49,4 @@ int main(){
     list.print();
 
     list.push_back(4);
-
 }
